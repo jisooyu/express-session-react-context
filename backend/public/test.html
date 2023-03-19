@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API</title>
+</head>
+<body>
+    <h1>Test /api/post</h1>
+    <button id="testButton">Send POST request</button>
+
+    <!-- Add the script tag to load axios from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script>
+        document.getElementById('testButton').addEventListener('click', async () => {
+            try {
+                const response = await axios.post('/api/post', {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    withCredentials: true // Include cookies in the request
+                });
+                const data = response.data;
+                console.log('Response:', data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

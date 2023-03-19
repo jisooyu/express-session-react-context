@@ -1,0 +1,15 @@
+{
+  "name": "express-session-react-context",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \" npm run server \" \" npm run client \""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
