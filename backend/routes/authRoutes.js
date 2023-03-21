@@ -18,8 +18,12 @@ module.exports = (app) => {
     })
 
     app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
-        res.redirect('http://localhost:3000/home');
+        res.redirect('http://localhost:3000');
     });
+
+    app.get('/api/getuser', (req, res) => {
+        res.send(req.user);
+    })
 
     app.post('/api/login', passport.authenticate('local', { failureMessage: 'Invalid email or password.' }),
         (req, res) => {

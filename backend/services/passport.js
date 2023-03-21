@@ -1,6 +1,7 @@
 const passport = require('passport');
 const mongoose = require('mongoose');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const TwitterStrategy = require('passport-twitter').Strategy;
 const LocalStrategy = require('passport-local').Strategy;
 const keys = require('../config/keys')
 
@@ -22,6 +23,22 @@ passport.use(new GoogleStrategy({
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback',
     proxy: true
+},
+    async (accessToken, refreshToken, profile, done) => {
+        const existingUser = await User.findOne({ googleId: profile.id })
+
+        if (existingUser) {
+            done(null, existingUser);
+        } else {
+            const user = await new User({ googleId: profile.id }).save()
+            done(null, user);
+        }
+    }));
+
+passport.use(new TwitterStrategy({
+    consumerKey: '',
+    consumerSecret: '',
+    callbackURL: ""
 },
     async (accessToken, refreshToken, profile, done) => {
         const existingUser = await User.findOne({ googleId: profile.id })
