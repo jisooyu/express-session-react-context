@@ -35,6 +35,8 @@ passport.use(new GoogleStrategy({
         }
     }));
 
+    // go to https://developer.twitter.com/en/docs/developer-portal/overview
+    // to sign up
 passport.use(new TwitterStrategy({
     consumerKey: '',
     consumerSecret: '',
