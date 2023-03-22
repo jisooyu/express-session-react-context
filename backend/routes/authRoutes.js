@@ -12,10 +12,9 @@ module.exports = (app) => {
         res.send(req.user)
     });
 
-    app.get('/api/logout', (req, res) => {
-        req.logout();
-        res.send(req.user);
-    })
+    // app.get('/api/logout', (req, res) => {
+    //     req.logout(() => res.send(req.user));
+    // })
 
     app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
         res.redirect('http://localhost:3000');
@@ -35,8 +34,9 @@ module.exports = (app) => {
     });
 
     app.post('/api/logout', (req, res) => {
-        req.logout();
         req.session.destroy();
-        res.send({ message: 'Logged out successfully' });
+        req.logout(() => {
+            res.send({ message: 'Logged out successfully' })
+        });
     });
 }

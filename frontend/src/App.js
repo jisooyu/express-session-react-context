@@ -8,7 +8,7 @@ import Login from './components/Login'
 function App() {
 
   return (
-    <>
+    <div className='container'>
       <Router>
         <Header />
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path='/display' element={<DashBoard />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
