@@ -1,7 +1,7 @@
 import React from 'react'
 import googleImage from '../assets/googleImage.png';
-import githubImage from '../assets/githubImage.png';
-import twitterImage from '../assets/twitterImage.png';
+// import githubImage from '../assets/githubImage.png';
+// import twitterImage from '../assets/twitterImage.png';
 import styles from './Login.module.css';
 
 const Login = () => {
@@ -14,13 +14,13 @@ const Login = () => {
         window.location.href = '/auth/google';
     }
 
-    const githubLogin = () => {
-        window.open("https://o-auth-video-backend.herokuapp.com/auth/github", "_self");
-    }
+    // const githubLogin = () => {
+    //     window.open("https://o-auth-video-backend.herokuapp.com/auth/github", "_self");
+    // }
 
-    const twitterLogin = () => {
-        window.location.href = "https://o-auth-video-backend.herokuapp.com/auth/twitter"
-    }
+    // const twitterLogin = () => {
+    //     window.location.href = "https://o-auth-video-backend.herokuapp.com/auth/twitter"
+    // }
 
     return (
         <div className={styles.loginPage}>
@@ -31,7 +31,7 @@ const Login = () => {
                     <p>Login With Google</p>
                 </div>
 
-                <div className={`${styles.googleContainer} ${styles.githubContainer}`} onClick={githubLogin}>
+                {/* <div className={`${styles.googleContainer} ${styles.githubContainer}`} onClick={githubLogin}>
                     <img src={githubImage} alt="Github Icon" />
                     <p>Login With Github</p>
                 </div>
@@ -39,7 +39,7 @@ const Login = () => {
                 <div className={`${styles.googleContainer} ${styles.twitterContainer}`} onClick={twitterLogin}>
                     <img src={twitterImage} alt="Twitter Icon" />
                     <p>Login With Twitter</p>
-                </div>
+                </div> */}
 
             </div>
 
