@@ -12,17 +12,9 @@ module.exports = (app) => {
         res.send(req.user)
     });
 
-    // app.get('/api/logout', (req, res) => {
-    //     req.logout(() => res.send(req.user));
-    // })
-
     app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
-        res.redirect('http://localhost:3000');
+        res.redirect('/display');
     });
-
-    app.get('/api/getuser', (req, res) => {
-        res.send(req.user);
-    })
 
     app.post('/api/login', passport.authenticate('local', { failureMessage: 'Invalid email or password.' }),
         (req, res) => {
@@ -39,4 +31,8 @@ module.exports = (app) => {
             res.send({ message: 'Logged out successfully' })
         });
     });
+    // app.get('/api/logout', (req, res) => {
+    //     req.logout(); // This is a Passport function that removes the user's session
+    //     res.redirect('/'); // Redirect the user back to the home page
+    // });
 }
