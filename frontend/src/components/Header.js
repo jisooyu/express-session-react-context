@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
 import { userContext } from '../context/AuthContext';
 import axios from 'axios';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-const Header = () => {
+function Header() {
     const userObject = useContext(userContext);
 
     const googleLogin = () => {
@@ -17,25 +20,31 @@ const Header = () => {
             console.log(error);
         }
     };
-
     return (
-        <nav>
-            <div className='nav-wrapper'>
-                <a className='left brand-logo'>Slow Coding</a>
-                <ul className='right'>
-                    {userObject ? (
-                        <li>
-                            <div onClick={googleLogout}>Log Out</div>
-                        </li>
-                    ) : (
-                        <li>
-                            <div onClick={googleLogin}>Login With Google</div>
-                        </li>
-                    )}
-                </ul>
-            </div>
-        </nav>
+        <>
+
+            <Navbar bg="primary" variant="dark">
+                <Container>
+                    <Navbar.Brand href="/">Slow Coding</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#prague">Baby Jesus of Prague</Nav.Link>
+                        <Nav.Link href="#fatima">Fatima Mother Mary</Nav.Link>
+                        <Nav.Link href="#prayer">Prayer to Mother Mary</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        {userObject ? (
+                            <Nav.Link onClick={googleLogout}>Log Out</Nav.Link>
+                        ) : (
+                            <li>
+                                <Nav.Link onClick={googleLogin}>Login With Google</Nav.Link>
+                            </li>
+                        )}
+                    </Nav>
+                </Container>
+            </Navbar>
+
+        </>
     );
-};
+}
 
 export default Header;
