@@ -27,9 +27,9 @@ function Header() {
                 <Container>
                     <Navbar.Brand href="/">Slow Coding</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#prague">Baby Jesus of Prague</Nav.Link>
-                        <Nav.Link href="#fatima">Fatima Mother Mary</Nav.Link>
-                        <Nav.Link href="#prayer">Prayer to Mother Mary</Nav.Link>
+                        <Nav.Link href="#prague">Baby Jesus</Nav.Link>
+                        <Nav.Link href="#fatima">Fatima</Nav.Link>
+                        <Nav.Link href="#prayer">Prayer</Nav.Link>
                     </Nav>
                     <Nav>
                         {userObject ? (
