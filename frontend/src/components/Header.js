@@ -4,6 +4,7 @@ import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Header() {
     const userObject = useContext(userContext);
@@ -22,27 +23,30 @@ function Header() {
     };
     return (
         <>
-
-            <Navbar bg="primary" variant="dark">
+            <Navbar className='mb-2' bg="primary" variant="dark">
                 <Container>
                     <Navbar.Brand href="/">Slow Coding</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#prague">Baby Jesus</Nav.Link>
-                        <Nav.Link href="#fatima">Fatima</Nav.Link>
-                        <Nav.Link href="#prayer">Prayer</Nav.Link>
-                    </Nav>
-                    <Nav>
-                        {userObject ? (
-                            <Nav.Link onClick={googleLogout}>Log Out</Nav.Link>
-                        ) : (
-                            <li>
-                                <Nav.Link onClick={googleLogin}>Login With Google</Nav.Link>
-                            </li>
-                        )}
-                    </Nav>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <NavDropdown title="Prayers" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="#prague">Baby Jesus</NavDropdown.Item>
+                                <NavDropdown.Item href="#fatima">Fatima</NavDropdown.Item>
+                                <NavDropdown.Item href="#prayer">Rosary</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                        <Nav>
+                            {userObject ? (
+                                <Nav.Link onClick={googleLogout}>Log Out</Nav.Link>
+                            ) : (
+                                <li>
+                                    <Nav.Link onClick={googleLogin}>Login With Google</Nav.Link>
+                                </li>
+                            )}
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
-
         </>
     );
 }
