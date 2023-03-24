@@ -29,6 +29,7 @@ function Header() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
+                            <Nav.Link href="/rosary">Rosary</Nav.Link>
                             <NavDropdown title="Prayers" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/prague">Infant Jesus</NavDropdown.Item>
                                 <NavDropdown.Item href="/fatima">Fatima</NavDropdown.Item>
