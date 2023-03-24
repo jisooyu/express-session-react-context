@@ -30,9 +30,9 @@ function Header() {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <NavDropdown title="Prayers" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#prague">Baby Jesus</NavDropdown.Item>
-                                <NavDropdown.Item href="#fatima">Fatima</NavDropdown.Item>
-                                <NavDropdown.Item href="#prayer">Rosary</NavDropdown.Item>
+                                <NavDropdown.Item href="/prague">Infant Jesus</NavDropdown.Item>
+                                <NavDropdown.Item href="/fatima">Fatima</NavDropdown.Item>
+                                <NavDropdown.Item href="faust">Faust Jesus</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                         <Nav>
