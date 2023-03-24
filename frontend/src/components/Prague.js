@@ -2,6 +2,10 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import Placeholder from 'react-bootstrap/Placeholder';
 
+/*
+testing the github upload
+*/
+
 const Prague = () => {
     return (
         <div className="d-flex justify-content-around">
