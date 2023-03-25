@@ -16,9 +16,9 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' exact element={<Landing />} />
-          {/* <Route path='/rosary' exact element={<Rosary />} />
+          {/* <Route path='/rosary' exact element={<Rosary />} /> */}
           <Route path='/fatima' element={<Fatima />} />
-          <Route path='/prague' element={<Prague />} /> */}
+          <Route path='/prague' element={<Prague />} />
           <Route path='/faust' element={<Faust />} />
           {/* <Route path='/jouful' element={<Joyful />} /> */}
         </Routes>
