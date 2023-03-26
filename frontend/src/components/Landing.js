@@ -1,22 +1,26 @@
 import React from 'react'
+import { Card, CardMedia, CardContent, CardHeader } from '@mui/material'
 
-
-export default function Landing() {
+const Landing = () => {
 
     return (
-        <div className="row">
-            <div className="col s12 m6">
-                <div className="card blue-grey darken-1">
-                    <div className="card-content white-text">
-                        <span className="card-title">Card Title</span>
-                        <p>This is a landing page. You may any contents that you like.</p>
-                    </div>
-                    <div className="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div style={{ marginTop: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+            <Card sx={{ maxWidth: 780 }}>
+                <CardHeader
+                    title="Catholic Prayers"
+                    subheader="2023"
+                />
+                <CardMedia
+                    component="img"
+                    height="460"
+                    image={`${process.env.PUBLIC_URL}/Lords-Prayer.jpeg`}
+                />
+                <CardContent>
+
+                </CardContent>
+            </Card>
+        </div >
     )
 }
+
+export default Landing;
