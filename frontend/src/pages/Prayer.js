@@ -1,16 +1,27 @@
 import React from 'react'
-import { Paper, Button, dividerClasses } from '@mui/material'
+import { Card, CardHeader, CardMedia, CardContent } from '@mui/material';
 
-function Prayer(props) {
+function Prayer({ prayer }) {
     return (
-        <Paper sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-
-            <h2 >{props.prayer.name}</h2>
-            <p >{props.prayer.description}</p>
-
-            <Button className="CheckButton">
-            </Button>
-        </Paper>
+        <Card sx={{
+            maxWidth: 420,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column'
+        }}>
+            <CardHeader sx={{ marginLeft: '20px', marginBottom: '10px', textAlign: 'center' }} title={prayer.title} subheader={prayer.subtitle} />
+            <CardMedia
+                component="img"
+                image={`${process.env.PUBLIC_URL}/joyful-mystery-1.jpeg`}
+                sx={{ marginLeft: '20px', maxHeight: '400px', objectFit: 'contain' }} // set the maxHeight and objectFit properties
+            />
+            <CardContent >
+                <p style={{ marginLeft: '20px', marginBottom: '10px' }}>{prayer.content}</p>
+                <p style={{ marginLeft: '20px', marginBottom: '10px', fontWeight: 'bold', }}>{prayer.repeat}</p>
+                <p style={{ marginLeft: '20px' }}>{prayer.ending}</p>
+            </CardContent>
+        </Card>
     )
 }
 

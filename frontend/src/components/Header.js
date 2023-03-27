@@ -35,24 +35,35 @@ function Header() {
         handleMenuClose();
         navigate(route);
     }
+
+    const menuItemStyle =
+    {
+        color: "#333",
+        fontSize: "14px",
+        "&:hover": {
+            backgroundColor: "#f5f5f5"
+        }
+    }
+
+    const linkTextStyle = { textDecoration: 'none', color: 'inherit', marginLeft: '30px' };
     return (
         <div style={{ height: 'auto' }}>
             <AppBar sx={{ marginBottom: 10 }}>
                 <Toolbar >
                     <SlowMotionVideoIcon />
                     <Typography>
-                        <Link href='/' style={{ textDecoration: 'none', color: 'inherit' }}>Slow Coding</Link>
+                        <Link href='/' sx={{ textDecoration: 'none', color: 'inherit' }}>Slow Coding</Link>
                     </Typography>
                     <Typography>
-                        <Link href='/prague' style={{ textDecoration: 'none', color: 'inherit', marginLeft: '30px' }}>Infant Jesus</Link>
+                        <Link href='/prague' sx={linkTextStyle}>Infant Jesus</Link>
                     </Typography>
                     <Typography>
-                        <Link href='/fatima' style={{ textDecoration: 'none', color: 'inherit', marginLeft: '30px' }}>Our Lady of Fatima</Link>
+                        <Link href='/fatima' sx={linkTextStyle}>Our Lady of Fatima</Link>
                     </Typography>
                     <Typography>
-                        <Link href='/faust' style={{ textDecoration: 'none', color: 'inherit', marginLeft: '30px' }}>Sister Faustina</Link>
+                        <Link href='/faust' sx={linkTextStyle}>Sister Faustina</Link>
                     </Typography>
-                    <Typography style={{ textDecoration: 'none', color: 'inherit', marginLeft: '30px', cursor: 'pointer' }} onClick={handleMenuOpen}>
+                    <Typography sx={{ textDecoration: 'none', color: 'inherit', marginLeft: '30px', cursor: 'pointer' }} onClick={handleMenuOpen}>
                         Rosary
                     </Typography>
                     <Menu
@@ -60,10 +71,10 @@ function Header() {
                         open={Boolean(anchorEl)}
                         onClose={handleMenuClose}
                     >
-                        <MenuItem onClick={() => handleMenuItemClick('/joyful')} >Joyful Mysteries</MenuItem>
-                        <MenuItem onClick={() => handleMenuItemClick('/sorrowful')}>Sorrowful Mysteries</MenuItem>
-                        <MenuItem onClick={() => handleMenuItemClick('/luminous')}>Luminous Mysteries</MenuItem>
-                        <MenuItem onClick={() => handleMenuItemClick('/glorious')}>Glorious Mysteries</MenuItem>
+                        <MenuItem onClick={() => handleMenuItemClick('/joyful')} sx={menuItemStyle} >Joyful Mysteries</MenuItem>
+                        <MenuItem onClick={() => handleMenuItemClick('/sorrowful')} sx={menuItemStyle}>Sorrowful Mysteries</MenuItem>
+                        <MenuItem onClick={() => handleMenuItemClick('/luminous')} sx={menuItemStyle}>Luminous Mysteries</MenuItem>
+                        <MenuItem onClick={() => handleMenuItemClick('/glorious')} sx={menuItemStyle}>Glorious Mysteries</MenuItem>
                     </Menu>
                     <Toolbar style={{ marginLeft: 'auto' }}>
                         {userObject ? (

@@ -7,6 +7,7 @@ import Prague from './components/Prague'
 import Faust from './components/Faust'
 import Joyful from './pages/Joyful'
 import Sorrowful from './pages/Sorrowful'
+import { joyfulPrayers } from './prayers/prayers';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
           <Route path='/fatima' element={<Fatima />} />
           <Route path='/prague' element={<Prague />} />
           <Route path='/faust' element={<Faust />} />
-          <Route path='/joyful' element={<Joyful />} />
+          <Route path='/joyful' element={<Joyful prayers={joyfulPrayers} />} />
           <Route path='/sorrowful' element={<Sorrowful />} />
         </Routes>
       </Router>
