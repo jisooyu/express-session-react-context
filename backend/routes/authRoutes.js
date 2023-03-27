@@ -13,7 +13,7 @@ module.exports = (app) => {
     });
 
     app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
-        res.redirect('/display');
+        res.redirect('/');
     });
 
     app.post('/api/login', passport.authenticate('local', { failureMessage: 'Invalid email or password.' }),
